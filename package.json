@@ -1,0 +1,42 @@
+{
+  "name": "count-to-v3",
+  "version": "1.0.8",
+  "type": "module",
+  "description": "Vue3 Digital scrolling effect",
+  "main": "dist/count-to-v3.cjs",
+  "module": "dist/count-to-v3.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "dist"
+  ],
+  "dependencies": {
+    "@vueuse/core": "^9.13.0",
+    "vite-plugin-dts": "^2.1.0",
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.5",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "typescript": "^4.9.3",
+    "unplugin-auto-import": "^0.15.1",
+    "vite": "^4.2.0",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vue-tsc": "^1.2.0"
+  },
+  "keywords": [
+    "vue3",
+    "count-to",
+    "typescript",
+    "vite",
+    "vue-count"
+  ],
+  "license": "ISC"
+}

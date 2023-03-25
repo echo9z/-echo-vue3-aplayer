@@ -1,0 +1,10 @@
+.vscode
+src
+public
+node_modules
+auto-imports.d.ts
+index.html
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+yarn.lock
