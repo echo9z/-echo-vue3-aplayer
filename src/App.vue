@@ -1,12 +1,12 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 // import CountTo from './components/CountTo.vue'
 
 </script>
 
 <template>
-  <CountTo :startVal="1" :endVal="2000"
-    :decimals="2" :separator="','"
-    prefix="￥" suffix="rmb" />
+  <CountTo :startVal="1" :endVal="2023" :duration="4000"
+    :decimals="0" :separator="','"
+    prefix="usd:" suffix="$" />
   <hr />
 </template>
 

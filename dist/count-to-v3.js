@@ -1,67 +1,67 @@
-import { getCurrentScope as R, onScopeDispose as U, ref as s, readonly as W, defineComponent as P, computed as j, watch as G, onMounted as H, onUnmounted as L, openBlock as M, createElementBlock as $, toDisplayString as K, unref as z } from "vue";
-const J = "1.0.7";
-function x(e, n, t, a, r, m) {
-  let u = e.toFixed(n);
-  u += "";
-  const i = u.split(".");
-  let o = i[0];
-  const c = i.length > 1 ? t + i[1] : "", f = /(\d+)(\d{3})/;
-  if (a && !X(a))
-    for (; f.test(o); )
-      o = o.replace(f, "$1" + a + "$2");
-  return r + o + c + m;
+import { getCurrentScope as H, onScopeDispose as L, ref as d, readonly as M, defineComponent as A, computed as $, watch as K, onMounted as z, onUnmounted as J, openBlock as X, createElementBlock as Y, toDisplayString as Z, unref as ee } from "vue";
+const ae = "1.1.3";
+function T(e, a, t, n, u, p) {
+  let s = e.toFixed(a);
+  s += "";
+  const r = s.split(".");
+  let o = r[0];
+  const c = r.length > 1 ? t + r[1] : "", i = /(\d+)(\d{3})/;
+  if (n && !te(n))
+    for (; i.test(o); )
+      o = o.replace(i, "$1" + n + "$2");
+  return u + o + c + p;
 }
-function X(e) {
+function te(e) {
   return !isNaN(parseFloat(e));
 }
-var N;
-const Q = typeof window < "u";
-Q && ((N = window == null ? void 0 : window.navigator) != null && N.userAgent) && /iP(ad|hone|od)/.test(window.navigator.userAgent);
-function Y(e) {
+var E;
+const B = typeof window < "u";
+B && ((E = window == null ? void 0 : window.navigator) != null && E.userAgent) && /iP(ad|hone|od)/.test(window.navigator.userAgent);
+function ne(e) {
   return e;
 }
-function Z(e) {
-  return R() ? (U(e), !0) : !1;
+function ue(e) {
+  return H() ? (L(e), !0) : !1;
 }
-const ee = Q ? window : void 0, T = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {}, F = "__vueuse_ssr_handlers__";
-T[F] = T[F] || {};
-function ae(e, n = {}) {
+const le = B ? window : void 0, S = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {}, h = "__vueuse_ssr_handlers__";
+S[h] = S[h] || {};
+function oe(e, a = {}) {
   const {
     immediate: t = !0,
-    window: a = ee
-  } = n, r = s(!1);
-  let m = 0, u = null;
-  function i(f) {
-    if (!r.value || !a)
+    window: n = le
+  } = a, u = d(!1);
+  let p = 0, s = null;
+  function r(i) {
+    if (!u.value || !n)
       return;
-    const _ = f - m;
-    e({ delta: _, timestamp: f }), m = f, u = a.requestAnimationFrame(i);
+    const w = i - p;
+    e({ delta: w, timestamp: i }), p = i, s = n.requestAnimationFrame(r);
   }
   function o() {
-    !r.value && a && (r.value = !0, u = a.requestAnimationFrame(i));
+    !u.value && n && (u.value = !0, s = n.requestAnimationFrame(r));
   }
   function c() {
-    r.value = !1, u != null && a && (a.cancelAnimationFrame(u), u = null);
+    u.value = !1, s != null && n && (n.cancelAnimationFrame(s), s = null);
   }
-  return t && o(), Z(c), {
-    isActive: W(r),
+  return t && o(), ue(c), {
+    isActive: M(u),
     pause: c,
     resume: o
   };
 }
-var q;
+var P;
 (function(e) {
   e.UP = "UP", e.RIGHT = "RIGHT", e.DOWN = "DOWN", e.LEFT = "LEFT", e.NONE = "NONE";
-})(q || (q = {}));
-var te = Object.defineProperty, E = Object.getOwnPropertySymbols, ne = Object.prototype.hasOwnProperty, ue = Object.prototype.propertyIsEnumerable, S = (e, n, t) => n in e ? te(e, n, { enumerable: !0, configurable: !0, writable: !0, value: t }) : e[n] = t, le = (e, n) => {
-  for (var t in n || (n = {}))
-    ne.call(n, t) && S(e, t, n[t]);
-  if (E)
-    for (var t of E(n))
-      ue.call(n, t) && S(e, t, n[t]);
+})(P || (P = {}));
+var se = Object.defineProperty, Q = Object.getOwnPropertySymbols, re = Object.prototype.hasOwnProperty, ie = Object.prototype.propertyIsEnumerable, V = (e, a, t) => a in e ? se(e, a, { enumerable: !0, configurable: !0, writable: !0, value: t }) : e[a] = t, fe = (e, a) => {
+  for (var t in a || (a = {}))
+    re.call(a, t) && V(e, t, a[t]);
+  if (Q)
+    for (var t of Q(a))
+      ie.call(a, t) && V(e, t, a[t]);
   return e;
 };
-const re = {
+const de = {
   easeInSine: [0.12, 0, 0.39, 0],
   easeOutSine: [0.61, 1, 0.88, 1],
   easeInOutSine: [0.37, 0, 0.63, 1],
@@ -87,13 +87,13 @@ const re = {
   easeOutBack: [0.34, 1.56, 0.64, 1],
   easeInOutBack: [0.68, -0.6, 0.32, 1.6]
 };
-le({
-  linear: Y
-}, re);
-const oe = P({
+fe({
+  linear: ne
+}, de);
+const ce = A({
   name: "CountTo"
-}), h = /* @__PURE__ */ P({
-  ...oe,
+}), N = /* @__PURE__ */ A({
+  ...ce,
   props: {
     startVal: {
       // 开始值
@@ -105,7 +105,7 @@ const oe = P({
       // 结束值
       type: Number,
       required: !1,
-      default: 2017
+      default: 2023
     },
     duration: {
       // 执行时间
@@ -161,51 +161,65 @@ const oe = P({
       // 缓和回调
       type: Function,
       // 计算缓和函数，0-3000毫秒 => 对应 开始值到结束值得变化
-      default(e, n, t, a) {
-        return t * (-Math.pow(2, -10 * e / a) + 1) * 1024 / 1023 + n;
+      default(e, a, t, n) {
+        return t * (-Math.pow(2, -10 * e / n) + 1) * 1024 / 1023 + a;
       }
     }
   },
   emits: ["mountedCountTo", "endCountToCallback"],
-  setup(e, { emit: n }) {
+  setup(e, { expose: a, emit: t }) {
     const {
-      startVal: t,
-      endVal: a,
-      duration: r,
-      autoplay: m,
-      decimals: u,
-      decimal: i,
-      separator: o,
-      prefix: c,
-      suffix: f,
-      useEasing: _,
-      easingFn: b
-    } = e, d = s(t), g = s(""), l = s(0), V = s(!1), p = s(r), y = s(0), A = s(0), B = s(0);
-    s(null), g.value = x(t, u, i, o, c, f);
-    const w = j(() => t > a);
-    G([() => t, () => a], () => {
+      startVal: n,
+      endVal: u,
+      duration: p,
+      autoplay: s,
+      decimals: r,
+      decimal: o,
+      separator: c,
+      prefix: i,
+      suffix: w,
+      useEasing: k,
+      easingFn: x
+    } = e, f = d(n), _ = d(""), l = d(0), g = d(!1), v = d(p), y = d(0), D = d(0), F = d(0);
+    _.value = T(n, r, o, c, i, w);
+    const b = $(() => n > u);
+    K([() => n, () => u], () => {
       C();
-    }), H(() => {
-      m && C(), n("mountedCountTo");
+    }), z(() => {
+      s && C(), t("mountedCountTo");
     });
-    const k = (O) => {
-      y.value || (y.value = O.timestamp), A.value = O.timestamp;
-      const v = O.timestamp - y.value;
-      B.value = p.value - v, _ ? w.value ? l.value = d.value - b(v, 0, d.value - a, p.value) : l.value = b(v, d.value, a - d.value, p.value) : w.value ? l.value = d.value - (d.value - a) * (v / p.value) : l.value = d.value + (a - d.value) * (v / p.value), w.value ? l.value = l.value < a ? a : l.value : l.value = l.value > a ? a : l.value, g.value = x(l.value, u, i, o, c, f), v > p.value && (I && I(), n("endCountToCallback"));
-    }, { pause: I, resume: D } = ae(k, { immediate: !1 }), C = () => {
-      d.value = t, y.value = 0, p.value = r, V.value = !1, D();
+    const R = (I) => {
+      y.value || (y.value = I.timestamp), D.value = I.timestamp;
+      const m = I.timestamp - y.value;
+      F.value = v.value - m, k ? b.value ? l.value = f.value - x(m, 0, f.value - u, v.value) : l.value = x(m, f.value, u - f.value, v.value) : b.value ? l.value = f.value - (f.value - u) * (m / v.value) : l.value = f.value + (u - f.value) * (m / v.value), b.value ? l.value = l.value < u ? u : l.value : l.value = l.value > u ? u : l.value, _.value = T(l.value, r, o, c, i, w), m > v.value && (O && O(), t("endCountToCallback"));
+    }, { pause: O, resume: q } = oe(R, { immediate: !1 }), C = () => {
+      f.value = n, y.value = 0, v.value = p, g.value = !1, q();
+    }, U = () => {
+      g.value ? (j(), g.value = !1) : (W(), g.value = !0);
+    }, W = () => {
+      O();
+    }, j = () => {
+      y.value = 0, v.value = +F.value, f.value = +l.value, q();
+    }, G = () => {
+      y.value = 0, O(), _.value = T(n, r, o, c, i, w);
     };
-    return L(() => {
-      I();
-    }), (O, v) => (M(), $("span", null, K(z(g)), 1));
+    return J(() => {
+      O();
+    }), a({
+      start: C,
+      reset: G,
+      pauseResume: U
+    }), (I, m) => (X(), Y("span", null, Z(ee(_)), 1));
   }
-}), ie = {
+}), ve = {
+  CountTo: N,
   install(e) {
-    e.component(h.name, h);
+    e.component(N.name, N);
   },
-  version: J
+  version: ae
 };
+typeof window < "u" && window.Vue && (window.CountTo = ve);
 export {
-  h as CountTo,
-  ie as default
+  N as CountTo,
+  ve as default
 };

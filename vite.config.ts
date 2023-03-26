@@ -36,7 +36,7 @@ export default defineConfig({
 			entry: path.resolve(__dirname, "./src/components/count-to/index.ts"), //指定组件编译入口文件
 			name: "count-to-v3",
 			fileName: "count-to-v3",
-      formats: ['cjs', 'es']
+      formats: ['cjs', 'es', 'umd', 'iife']
 		}, //库编译模式配置
 		rollupOptions: {
 			// 确保外部化处理那些你不想打包进库的依赖
@@ -49,6 +49,7 @@ export default defineConfig({
 				globals: {
 					vue: "Vue",
 				},
+        extend: true
 			},
 		},
   },

@@ -24,7 +24,7 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 
-import CountTo from './components/count-to'
+import CountTo from 'count-to-v3'
 createApp(App).use(CountTo).mount('#app')
 ```
 

@@ -24,7 +24,7 @@ const {
   endVal: { // 结束值
     type: Number,
     required: false,
-    default: 2017
+    default: 2023
   },
   duration: {// 执行时间
     type: Number,
@@ -87,7 +87,6 @@ const localDuration = ref(duration)
 const startTime = ref(0)
 const timestamps = ref(0)
 const remaining = ref(0)
-const rAF = ref(null)
 
 displayValue.value = useFormatNumber(startVal, decimals, decimal, separator, prefix, suffix)
 
@@ -179,6 +178,12 @@ const reset = () => {
 
 onUnmounted(() => {
   pause()
+})
+
+defineExpose({
+  start,
+  reset,
+  pauseResume
 })
 </script>
 <style lang="scss" scoped>
